@@ -1,4 +1,5 @@
 <?php
+// aqui temos o modo de CREATE ou seja o INSERT do CRUD.
 require 'config.php';
 
 $name = filter_input(INPUT_POST, 'name');
