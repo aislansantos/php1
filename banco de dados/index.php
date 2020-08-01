@@ -1,7 +1,8 @@
 <?php
+require 'config.php';
 
-// A conexão acontence quando se estancia a classe PDO
-$pdo = new PDO("mysql:dbname=test;host=localhost", "root", "");
+/*
+1ª AULA DE BANCO DE DADOS
 
 $sql = $pdo->query('SELECT * FROM usuarios');
 
@@ -11,3 +12,17 @@ $dados = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<pre>';
 print_r($dados);
+*/
+
+?>
+
+<a href="adicionar.php">Adicionar Usuario</a>
+
+<table border="1" width="100%">
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+    </tr>
+</table>

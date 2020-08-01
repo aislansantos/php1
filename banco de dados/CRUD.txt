@@ -1,4 +1,6 @@
-C -> CREATE
-R -> READ
-U -> UPDATE
-D -> DELETE
+C -> CREATE -> INSERIR INFORMAÇÕES
+R -> READ -> CONSULTAR INFORMAÇÕES
+U -> UPDATE -> ALTERAR INFORMAÇÕES
+D -> DELETE -> DELETAR INFORMAÇÕES
+
+Um sistema de controle de estoque nada mais é que um crud.
