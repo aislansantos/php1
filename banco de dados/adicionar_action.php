@@ -10,15 +10,20 @@ if ($name && $email) {
     $sql->bindValue(':email', $email);
     $sql->execute();
 
-    
+    if ($sql->rowCount() === 0) {
 
-    $sql = $pdo->prepare("INSERT INTO usuarios (nome,email) VALUES (:name, :email)");
-    $sql->bindValue(':name', $name);
-    $sql->bindValue(':email', $email);
-    $sql->execute();
+        $sql = $pdo->prepare("INSERT INTO usuarios (nome,email) VALUES (:name, :email)");
+        $sql->bindValue(':name', $name);
+        $sql->bindValue(':email', $email);
+        $sql->execute();
 
-    header("location: index.php");
-    exit;
+        header("location: index.php");
+        exit;
+    } else {
+        header("location: adicionar.php");
+        exit;
+    }
 } else {
     header("location: adicionar.php");
+    exit;
 }
