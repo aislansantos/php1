@@ -1,4 +1,5 @@
 <?php
+// aqui temos a index e o modo de READ ou seja o select do CRUD.
 require 'config.php';
 
 $lista = [];
