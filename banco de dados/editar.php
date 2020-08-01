@@ -6,7 +6,7 @@ require 'config.php';
 $info = [];
 
 $id = filter_input(INPUT_GET, 'id');
-
+// Testamos se a variavel ID recebeu valor
 if ($id) {
 
     // Prepara a pesquisa para ser feita a consuta no bando de dados
@@ -43,11 +43,13 @@ if ($id) {
 
     <label for="">
         Nome:<br>
+        <!-- popula o campo de nome com a variavel tipo vetor $info carregada acima -->
         <input type="text" name="name" id="" value="<?=$info['nome'];?>">
     </label><br><br>
 
     <label for="">
         E-mail:<br>
+        <!-- popula o campo de nome com a variavel tipo vetor $info carregada acima -->
         <input type="email" name="email" id="" value="<?=$info['email'];?>">
     </label><br><br>
 
