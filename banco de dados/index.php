@@ -29,7 +29,11 @@ if ($sql->rowCount() > 0) {
             <td><?= $usuario['email']; ?></td>
             <td>
                 <a href="editar.php?id=<?= $usuario['id']; ?>">[Editar]</a>
-                <a href="excluir.php?id=<?= $usuario['id']; ?>">[Excluir]</a>
+
+                <!-- depois do codigo do usuario temos o onclick que é um comando de java script para confirmar
+                neste caso a exclusão do registro sem querer, o sistema vai perguntar se tem certeza da exclusão,
+                a função retorna true e executa o excluir se confirmar ou então para o código no caso de dar não -->
+                <a href="excluir.php?id=<?= $usuario['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir ?')">[Excluir]</a>
             </td>
         </tr>
     <?php endforeach; ?>

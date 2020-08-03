@@ -2,6 +2,7 @@
 /*nesse arquivo de editar pegamos o id do cadastro via get, pesquisamos no banco de dados
 e em seguida populamos os campos de imput para editar/alterar os dados do registro selecionado */
 require 'config.php';
+
 // criamos uma variavel para popular na pesquisa do banco de dados
 $info = [];
 
