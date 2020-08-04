@@ -1,13 +1,10 @@
 <?php
 // aqui temos a index e o modo de READ ou seja o select do CRUD.
 require 'config.php';
+require 'dao/UsuarioDaoMySql.php';
 
-$lista = [];
-$sql = $pdo->query("SELECT * FROM usuarios");
-if ($sql->rowCount() > 0) {
-    $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-}
-
+$usuarioDao = new UsuarioDaoMysql($pdo);
+$lista = $usuarioDao->findAll();
 
 ?>
 
@@ -20,21 +17,21 @@ if ($sql->rowCount() > 0) {
         <th>Email</th>
         <th>Ações</th>
     </tr>
-    <?php
-    // dentro dos <td> a tag <?= é a mesma coisa que <?php echo, ou seja uma forma abreviada da mesma
-    foreach ($lista as $usuario) : ?>
+    <!-- // dentro dos <td> a tag ?= é a mesma coisa que <php echo, ou seja uma forma abreviada da mesma  -->
+    <?php foreach ($lista as $usuario) : ?>
         <tr>
-            <td><?= $usuario['id']; ?></td>
-            <td><?= $usuario['nome']; ?></td>
-            <td><?= $usuario['email']; ?></td>
+            <td><?= $usuario->getId(); ?></td>
+            <td><?= $usuario->getNome(); ?></td>
+            <td><?= $usuario->getEmail() ?></td>
             <td>
-                <a href="editar.php?id=<?= $usuario['id']; ?>">[Editar]</a>
+                <a href="editar.php?id=<?= $usuario->getId(); ?>">[Editar]</a>
 
                 <!-- depois do codigo do usuario temos o onclick que é um comando de java script para confirmar
                 neste caso a exclusão do registro sem querer, o sistema vai perguntar se tem certeza da exclusão,
                 a função retorna true e executa o excluir se confirmar ou então para o código no caso de dar não -->
-                <a href="excluir.php?id=<?= $usuario['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir ?')">[Excluir]</a>
+                <a href="excluir.php?id=<?= $usuario->getId(); ?>" onclick="return confirm('Tem certeza que deseja excluir ?')">[Excluir]</a>
             </td>
         </tr>
     <?php endforeach; ?>
 </table>
+

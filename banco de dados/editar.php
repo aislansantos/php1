@@ -55,3 +55,5 @@ if ($id) {
     <input type="submit" value="Salvar">
 
 </form>
+
+<a href="index.php">index</a>
