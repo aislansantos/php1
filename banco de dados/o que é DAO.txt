@@ -32,3 +32,13 @@ $usuario->setNome('fulano');
 $usuario->setEmail('fulano@hotmail.com');
 
 $usuarioDAO->add($usuario);
+
+
+
+Resimindo,
+
+$usuarioDAO->add($usuario);
+
+-Crio o objeto a ser adicionado
+-Mando o Objeto para o intermediario
+-O intermediario faz a comunicação com o banco de dados
