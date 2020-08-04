@@ -8,11 +8,10 @@ $id = filter_input(INPUT_GET, 'id');
 
 // Testamos se a variavel ID recebeu valor
 if ($id) {
-    
+
     $sql = $pdo->prepare("DELETE FROM usuarios WHERE id = :id");
     $sql->bindValue(':id', $id);
     $sql->execute();
-
 }
 
 header("Location: index.php");

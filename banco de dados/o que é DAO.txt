@@ -1,0 +1,34 @@
+CLASSE USUARIO
+-ID
+-NOME
+-EMAIL
+
+VAMOS TERiamos ALGUNS METODOS DA CLASSE, POR EXEMPLO
+
+-getId
+-setId
+
+-getNome
+-setNome
+
+-getEmail
+-setEmail
+
+tudo que trabalhasem com os dados dos USUARIOS, passaria por essa classe,
+para trabalhar com o DAO teriamos de trabalhar com duas classes pelo menos, ao invés de uma.
+
+Iriamos trabalhar com uma classe USUARIO e outra USUARIODAO
+
+USUARIODAO -> essa classe vai ter o CRUD, tendo o auxilio da classe USUARIO.
+//metodo recebe uma classe usuario.
+-add(USUARIO);
+
+
+PASSO 1 PARA ADD NOVO USUARIO
+-Cria classe do novo USUARIO
+
+$usuario = new Usuario();
+$usuario->setNome('fulano');
+$usuario->setEmail('fulano@hotmail.com');
+
+$usuarioDAO->add($usuario);
