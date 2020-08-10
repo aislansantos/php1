@@ -1,0 +1,1 @@
+CROP -> processo de corte da imagem para gerar de um tamanho fixo.
