@@ -1,0 +1,27 @@
+M -> MODEL
+V -> VIEW
+C -> CONTROLLER
+
+Conceito basico com o mvc que temos de limpar da cabeça, quanto usamos o MVC ele esconde ou altera os endereços de paginas por exemplo:
+site.com.br/algumacoisa/seila/sobre.php
+No mvc nem tudo que vem depois do barra do seusite.com.br é um endereço de pasta ou de arquivos como estavamos acostumados,
+pode ser que seja instruções para o site, ela normalmente tem um arquivo inicial que carrega o sistema, mesmo tendo
+um arquivo chamado Index.php não precisa digitar a identificação do index
+
+site.com.br/sobre
+
+passo a passo do MVC
+
+-> usuario requisira a URL site.com.br/sobre.
+
+-> MVC vai verificar se a ROTA está estabelecida, se existe a rota SOBRE.
+
+-> MVC vai mandar a requisição para o CONTROLLER da rota.
+--> CONTROLLER pode fazer duas coisas:
+---> 1º pode carregar um VIEW(parte visual do sistema) .
+---> 2º pode chamar um MODEL(classe relacioanda diretamente ao banco de dados).
+
+Sequencia:
+-Controller;
+-Model;
+-View;
