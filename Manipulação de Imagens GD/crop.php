@@ -1,7 +1,7 @@
 <?php
 $arquivo = 'paisagem.jpg';
-$width = 300;
-$height = 300;
+$width = 250;
+$height = 250;
 // list pega o array joga os itens de tamanho na variavel
 list($originalWidth, $originalHeight) = getimagesize($arquivo);
 
@@ -10,7 +10,7 @@ $ratioDest = $width / $height;
 
 $finalWidth = 0;
 $finalHeight = 0;
-$finalX = 0 ;
+$finalX = 0;
 $finalY = 0;
 
 if ($ratioDest > $ratio) {
@@ -25,12 +25,12 @@ if ($finalWidth < $width) {
     $finalWidth = $width;
     $finalHeight = $width / $ratio;
 
-    $finalY = -(($finalHeight - $height) /2);
-}else {
+    $finalY = - (($finalHeight - $height) / 2);
+} else {
     $finalHeight = $height;
     $finalWidth = $height * $ratio;
 
-    $finalX = -(($finalWidth - $width) /2) ;
+    $finalX = - (($finalWidth - $width) / 2);
 }
 
 $imagem = imagecreatetruecolor($width, $height);
